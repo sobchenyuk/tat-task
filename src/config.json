@@ -1,0 +1,122 @@
+{
+  "one": {
+    "message": "One question?",
+    "award": 1000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  ""},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  ""},
+      { "option":  "D", "title":  "option D", "next":  "two"}
+    ]
+  },
+  "two": {
+    "message": "Two question?",
+    "award": 4000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  ""},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  ""},
+      { "option":  "D", "title":  "option D", "next":  "three"}
+    ]
+  },
+  "three": {
+    "message": "Three question?",
+    "award": 2000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  ""},
+      { "option":  "B", "title":  "option B", "next":  "four"},
+      { "option":  "C", "title":  "option C", "next":  ""},
+      { "option":  "D", "title":  "option D", "next":  ""}
+    ]
+  },
+  "four": {
+    "message": "Four question?",
+    "award": 500,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  ""},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  "five"},
+      { "option":  "D", "title":  "option D", "next":  ""}
+    ]
+  },
+  "five":  {
+    "message": "Five question?",
+    "award": 8000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  "six"},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  ""},
+      { "option":  "D", "title":  "option D", "next":  ""}
+    ]
+  },
+  "six": {
+    "message": "Six question?",
+    "award": 16000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  ""},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  "seven"},
+      { "option":  "D", "title":  "option D", "next":  ""}
+    ]
+  },
+  "seven":  {
+    "message": "Seven question?",
+    "award": 32000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  "eight"},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  ""},
+      { "option":  "D", "title":  "option D", "next":  ""}
+    ]
+  },
+  "eight": {
+    "message": "Eight question?",
+    "award": 64000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  ""},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  ""},
+      { "option":  "D", "title":  "option D", "next":  "nine"}
+    ]
+  },
+  "nine":  {
+    "message": "Nine question?",
+    "award": 125000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  ""},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  "ten"},
+      { "option":  "D", "title":  "option D", "next":  ""}
+    ]
+  },
+  "ten": {
+    "message": "Ten question?",
+    "award": 250000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  ""},
+      { "option":  "B", "title":  "option B", "next":  "eleven"},
+      { "option":  "C", "title":  "option C", "next":  ""},
+      { "option":  "D", "title":  "option D", "next":  ""}
+    ]
+  },
+  "eleven":  {
+    "message": "Eleven question?",
+    "award": 500000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  "twelve"},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  ""},
+      { "option":  "D", "title":  "option D", "next":  ""}
+    ]
+  },
+  "twelve": {
+    "message": "Twelve question?",
+    "award": 1000000,
+    "transition": [
+      { "option":  "A", "title":  "option A", "next":  ""},
+      { "option":  "B", "title":  "option B", "next":  ""},
+      { "option":  "C", "title":  "option C", "next":  ""},
+      { "option":  "D", "title":  "option D", "next":  "last"}
+    ]
+  }
+}

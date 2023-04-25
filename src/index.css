@@ -1,11 +1,25 @@
 :root {
+  --color-dark-blue: #003B63;
+  --color-blue: #004974;
+  --color-sky-blue: #1E6A8E;
+  --color-light-blue: #3891B1;
+  --color-brown: #A34716;
+  --color-orange: #F8A363;
+  --color-yellow: rgba(211, 209, 0, 1);
+  --color-light-yellow: rgba(211, 209, 0, 0.03);
+
+  --color-Black-100: rgba(28, 28, 33, 1);
+  --color-Black-40: rgba(208, 208, 216, 1);
+  --color-Black-5: rgba(245, 245, 247, 1);
+  --color-White-100: rgba(255, 255, 255, 1);
+  --color-Green-100: rgba(71, 216, 103, 1);
+  --color-Green-5: rgba(230, 250, 234, 1);
+  --color-Red-100: rgba(236, 98, 89, 1);
+  --color-Red-5: rgba(253, 238, 237, 1);
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,56 +28,53 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  text-transform: none;
+  border-radius: 12px;
+  border: 0;
+  padding: 1.063rem 0.75rem;
+  line-height: 1.5;
+  min-width: 288px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-White-100);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+h1 {
+  color: var(--color-White-100);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
 }

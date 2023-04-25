@@ -1,0 +1,18 @@
+.root {
+    color: var(--color-light-blue);
+    padding-left: 68px;
+    padding-right: 68px;
+}
+
+.text {
+    padding: 5px 0;
+    display: block;
+}
+
+.next {
+    color: var(--color-Black-100);
+}
+
+.disabled {
+    color: var(--color-Black-40);
+}

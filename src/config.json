@@ -1,7 +1,7 @@
 {
   "one": {
     "message": "One question?",
-    "award": 1000,
+    "award": 500,
     "transition": [
       { "option":  "A", "title":  "option A", "next":  ""},
       { "option":  "B", "title":  "option B", "next":  ""},
@@ -11,7 +11,7 @@
   },
   "two": {
     "message": "Two question?",
-    "award": 4000,
+    "award": 1000,
     "transition": [
       { "option":  "A", "title":  "option A", "next":  ""},
       { "option":  "B", "title":  "option B", "next":  ""},
@@ -31,7 +31,7 @@
   },
   "four": {
     "message": "Four question?",
-    "award": 500,
+    "award": 4000,
     "transition": [
       { "option":  "A", "title":  "option A", "next":  ""},
       { "option":  "B", "title":  "option B", "next":  ""},

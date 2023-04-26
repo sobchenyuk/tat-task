@@ -1,0 +1,7 @@
+.isGamePage {
+    align-items: baseline !important;
+}
+
+.is-stop-game {
+    pointer-events: none;
+}

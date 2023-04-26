@@ -33,15 +33,15 @@ export const Diamond: FC<Props> = ({
 
     return (
         <div>
-            <div className={styles.line} style={styleBorderColor} />
-            <div className={cn(styles.diamond, classNameDiamond)} style={styleBorderColor}>
-                <div className={styles.top}>
-                    <div className={styles.topBefore} style={{...styleBorder, ...styleBorderTopRightColor}} />
-                    <div className={styles.topAfter} style={{...styleBorder, ...styleBorderTopLeftColor}} />
-                    <div className={styles.bottomBefore} style={styleBorder} />
-                    <div className={styles.bottomAfter} style={styleBorder} />
+            <div className={cn(styles.line, 'diamond__line')} style={styleBorderColor} />
+            <div className={cn(styles.diamond, classNameDiamond, 'diamond__wrap')} style={styleBorderColor}>
+                <div className={cn(styles.top, 'diamond__top')}>
+                    <div className={cn(styles.topBefore, 'diamond__top-before')} style={{...styleBorder, ...styleBorderTopRightColor}} />
+                    <div className={cn(styles.topAfter, 'diamond__top-after')} style={{...styleBorder, ...styleBorderTopLeftColor}} />
+                    <div className={cn(styles.bottomBefore, 'diamond__bottom-before')} style={styleBorder} />
+                    <div className={cn(styles.bottomAfter, 'diamond__bottom-after')} style={styleBorder} />
                 </div>
-                <div className={styles.content}>{children}</div>
+                <div className={cn(styles.content, 'diamond__content')}>{children}</div>
             </div>
         </div>
     )

@@ -1,0 +1,36 @@
+.root {
+    position: relative;
+    padding: 0 16px;
+    background: transparent;
+    cursor: default;
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 400;
+    font-size: 20px;
+    padding: 24px 0 24px 5px;
+}
+
+.title {
+    color: var(--color-blue);
+    font-weight: 600;
+}
+
+.text {
+    color: var(--color-Black-100);
+    margin-left: 10px;
+}
+
+.diamond {
+    width: calc(100% - 56px);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 16px 0 16px 5px;
+    }
+}

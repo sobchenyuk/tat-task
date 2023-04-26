@@ -16,9 +16,11 @@
   --color-Green-5: rgba(230, 250, 234, 1);
   --color-Red-100: rgba(236, 98, 89, 1);
   --color-Red-5: rgba(253, 238, 237, 1);
+  --color-Orange-5: rgba(255, 243, 235, 1);
+  --color-Orange-100: rgba(255, 139, 55, 1);
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: 400;
 
   font-synthesis: none;
@@ -28,12 +30,35 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
+.app {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  min-height: 100%;
+}
+
+body, html {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 button {
@@ -41,21 +66,39 @@ button {
   text-transform: none;
   border-radius: 12px;
   border: 0;
-  padding: 1.063rem 0.75rem;
-  line-height: 1.5;
-  min-width: 288px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  color: var(--color-White-100);
 }
 
 button:focus:not(:focus-visible) {
   outline: 0;
 }
 
+.btn {
+  cursor: pointer;
+  text-transform: none;
+  border-radius: 12px;
+  border: 0;
+  padding: 1.063rem 0.75rem;
+  line-height: 1.5;
+  max-width: 296px;
+  width: 100%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--color-White-100);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn:focus:not(:focus-visible) {
+  outline: 0;
+}
+
 .text-center {
   text-align: center;
+}
+.text-right {
+  text-align: right;
 }
 
 .relative {
@@ -66,8 +109,12 @@ button:focus:not(:focus-visible) {
   position: absolute;
 }
 
+.w-full {
+  width: 100%;
+}
+
 h1 {
-  color: var(--color-White-100);
+  color: var(--color-Black-100);
   font-style: normal;
   font-weight: 600;
   font-size: 56px;
@@ -77,4 +124,32 @@ h1 {
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
+}
+
+.container {
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 425px) {
+  .btn {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 0.845rem 0.75rem;
+  }
+}
+
+@media (max-height: 550px) {
+  body, html {
+    height: auto;
+  }
 }

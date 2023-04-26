@@ -1,0 +1,72 @@
+.options .diamond__bottom-before,
+.options .diamond__top-before {
+    border-right-width: 28px;
+    left: -28px;
+}
+.options .diamond__bottom-after,
+.options .diamond__top-after {
+    border-left-width: 28px;
+    right: -28px;
+}
+
+.options .diamond__bottom-before {
+    left: -27px;
+}
+
+.options .diamond__bottom-after {
+    right: -27px;
+}
+
+.options .selected .diamond__content {
+    background-color: var(--color-Orange-5);
+}
+.options .selected .diamond__bottom-before {
+    border-right-color: var(--color-Orange-5);
+}
+.options .selected .diamond__bottom-after {
+    border-left-color: var(--color-Orange-5);
+}
+
+.options .correct .diamond__content {
+    background-color: var(--color-Green-5);
+}
+.options .correct .diamond__bottom-before {
+    border-right-color: var(--color-Green-5);
+}
+.options .correct .diamond__bottom-after {
+    border-left-color: var(--color-Green-5);
+}
+
+.options .wrong .diamond__content {
+    background-color: var(--color-Red-5);
+}
+.options .wrong .diamond__bottom-before {
+    border-right-color: var(--color-Red-5);
+}
+.options .wrong .diamond__bottom-after {
+    border-left-color: var(--color-Red-5);
+}
+
+@media (min-width: 768px) {
+    .options:hover .diamond__line,
+    .options:hover .diamond__wrap
+    {
+        border-color: var(--color-blue) !important;
+    }
+
+    .options:hover .diamond__top-before {
+        border-right-color: var(--color-blue) !important;
+    }
+    .options:hover .diamond__top-after {
+        border-left-color: var(--color-blue) !important;
+    }
+
+    .options .diamond__bottom-before,
+    .options .diamond__top-before {
+        top: -2px;
+    }
+    .options .diamond__bottom-after,
+    .options .diamond__top-after {
+        top: -2px;
+    }
+}

@@ -1,0 +1,9 @@
+.isGameStartPage {
+    background: rgba(0, 73, 116, 0.05) !important;
+}
+
+@media (max-width: 768px) {
+    .isGameStartPage {
+        background: var(--color-Orange-5) !important;
+    }
+}

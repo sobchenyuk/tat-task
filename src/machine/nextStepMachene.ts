@@ -7,26 +7,18 @@ import questions from '../config.json'
 const nextStepMachine = createMachine<Context>({
     predictableActionArguments: true,
     id: 'nextStepMachine',
-    initial: "welcome",
+    initial: "question",
     context: {
         question: "one",
         questions: JSON.parse(JSON.stringify(questions))
     },
     states: {
-        welcome: {
-            on: {
-                NEXT: "question"
-            }
-        },
         question: {
             on: {
                 NEXT: {
                     actions: ['nextStep']
                 }
             }
-        },
-        gameOver: {
-            type: "final"
         }
     }
 }, {

@@ -1,4 +1,5 @@
 import {FC, Fragment, useCallback, useEffect, useMemo, useState} from "react";
+import {useSetRecoilState} from "recoil";
 import {useNavigate} from "react-router-dom";
 import styles from './Game.module.css'
 import './style.css'
@@ -10,19 +11,13 @@ import {useMachine} from "@xstate/react";
 import nextStepMachine from "../../machine/nextStepMachene.ts";
 import {transitionType} from "../../machine/types.ts";
 import {status} from "../../components/options/types.ts";
+import {totalState} from "../../store/total-state.ts";
 
 type Timer = ReturnType<typeof setTimeout>;
 
 export const Game : FC = () => {
     const navigate = useNavigate();
-    const [result, setResult] = useState<number>(0)
-    const [awardList, setAwardList] = useState<number>(0)
-    const [awardState, setAwardState] = useState<number>(0)
-    const [isOpen, setOpen] = useState<boolean>(false)
-    const [selected, setSelected] = useState<string>('')
-    const [step, setStep] = useState<string>('')
-    const [isStop, setStop] = useState<boolean>(false)
-    const [status, setStatus] = useState<status>('inactive')
+    const setTotalStateState = useSetRecoilState(totalState)
     const [state, send] = useMachine(nextStepMachine);
     const { question } = state.context;
 
@@ -44,16 +39,22 @@ export const Game : FC = () => {
         return result
     }, [state])
 
+    const [total, setTotal] = useState<number>(0)
+    const [isOpen, setOpen] = useState<boolean>(false)
+    const [selected, setSelected] = useState<string>('')
+    const [step, setStep] = useState<string>('')
+    const [isStop, setStop] = useState<boolean>(false)
+    const [status, setStatus] = useState<status>('inactive')
+    const [count, setCount] = useState<number>(0)
+
     const onOption = useCallback((next: string, title: string) => {
         if (questionData) {
             const {award} = questionData;
-            setAwardState(award)
-            setResult((result) => result + award)
+            setTotal((result) => result + award)
             setStep(next)
             setSelected(title)
             setStop(true);
             setStatus('selected')
-            console.log(questionData)
         }
     }, [questionData])
 
@@ -71,13 +72,15 @@ export const Game : FC = () => {
                 }
 
                 timer1 = setTimeout(() => {
-                    setAwardList(awardState)
                     setSelected('')
                     setStop(false);
+                    setCount((count) => count + 1)
                     send({ type: "NEXT", question: step })
 
                     if (!step) {
                         navigate('/game-over')
+                    } else {
+                        setTotalStateState(total)
                     }
                 }, 2000)
             }, 2000);
@@ -87,7 +90,7 @@ export const Game : FC = () => {
             clearTimeout(timer)
             clearTimeout(timer1)
         }
-    }, [awardState, isStop, navigate, send, step]);
+    }, [isStop, navigate, send, setTotalStateState, step, total]);
     return (
         <div className={cn(styles.container)}>
             <div className={cn(styles.content, isStop ? 'is-stop-game' : null)}>
@@ -116,18 +119,10 @@ export const Game : FC = () => {
             </div>
             <div className={cn(styles.sidebar, !isOpen ? styles.sidebarIsOpen : null)}>
                 <div className="w-full">
-                    {awardState}
                     <List>
                         {awards.map(({id, award}) => (
                             <Fragment key={id}>
-                                <ListItems value={award} disabled={award !== awardList} />
-                                {/*{award < awardList ? (*/}
-                                {/*    <ListItems value={award} disabled />*/}
-                                {/*) : awardList === awardState ? (*/}
-                                {/*    <ListItems value={award} />*/}
-                                {/*) : (*/}
-                                {/*    <ListItems value={award} isNext />*/}
-                                {/*)}*/}
+                                <ListItems value={award} isNext={id !== count} disabled={id < count} />
                             </Fragment>
                         ))}
                     </List>

@@ -14,8 +14,8 @@ type Props = {
 
 export const ListItems: FC<Props> = ({value, disabled = false, isNext = false}: Props) => {
     const matches = useMediaQuery('(min-width: 769px)')
-    const borderColor = (disabled || isNext) ? null : '--color-light-blue'
-    const isDesktop = (disabled && !matches || isNext && !matches) ? null : 'isDesktop'
+    const borderColor = (disabled || isNext) ? '--color-Black-40' : '--color-light-blue'
+    const isDesktop = !isNext && matches && !disabled ? 'isDesktop' : null
     return (
         <li
             className={cn(
@@ -25,7 +25,7 @@ export const ListItems: FC<Props> = ({value, disabled = false, isNext = false}: 
                 'list-items',
                 disabled ? styles.disabled : null,
                 isNext ? styles.next : null,
-                // isDesktop
+                isDesktop
             )}
         >
             <Diamond borderColor={borderColor} borderTop={matches ? 21.5 : 17.5} borderBottom={matches ? 21.5 : 17.5}>
